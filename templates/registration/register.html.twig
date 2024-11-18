@@ -1,0 +1,36 @@
+{% block head %} 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  {% endblock %}
+
+{% extends 'base.html.twig' %}
+ 
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Incription</h1>
+<div class="col mb-3">
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email,{
+            label:'Addresse de messagerie'
+        }) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+         {{ form_row(registrationForm.address, {
+            label:'Adresse'
+        }) }}
+        {{ form_row(registrationForm.city, {
+            label:'Ville'
+        }) }}
+ {{ form_row(registrationForm.codeAddress, {
+            label:'Code Zip'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

@@ -1,6 +1,10 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+      titre: 'mon nouveau titre'
 
 when@test:
     twig:
         strict_variables: true
+    
+
